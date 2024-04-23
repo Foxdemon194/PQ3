@@ -21,6 +21,7 @@ TagManager:
   - HairBrush
   - MagicAxe
   - Scroll
+  - Princess
   layers:
   - Default
   - TransparentFX

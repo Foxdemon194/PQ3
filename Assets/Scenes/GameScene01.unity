@@ -7396,6 +7396,10 @@ PrefabInstance:
       value: 16_Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
       value: Scroll
       objectReference: {fileID: 0}
@@ -10577,8 +10581,9 @@ GameObject:
   - component: {fileID: 604885289}
   - component: {fileID: 604885290}
   - component: {fileID: 604885292}
-  - component: {fileID: 604885291}
   - component: {fileID: 604885293}
+  - component: {fileID: 604885294}
+  - component: {fileID: 604885291}
   m_Layer: 3
   m_Name: Player01
   m_TagString: Player
@@ -10734,7 +10739,8 @@ MonoBehaviour:
   isPlayer2: 0
   playerScript: {fileID: 0}
   encounterEvent: {fileID: 0}
-  hasNecklease: 0
+  totalItems: 0
+  hasLocket: 0
   hasMagicAxe: 0
   hasBracelet: 0
   hasBrush: 0
@@ -10743,6 +10749,23 @@ MonoBehaviour:
   hasPouch: 0
   hasHorns: 0
   hasRing: 0
+--- !u!114 &604885294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604885286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c30d5b9999539440880ffc7b65070e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  playerInventory: {fileID: 0}
+  VicotryScreen: {fileID: 0}
+  NotEnoughItems: {fileID: 0}
+  PrincessText: {fileID: 0}
 --- !u!1001 &606309772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27190,6 +27213,7 @@ GameObject:
   - component: {fileID: 1451835916}
   - component: {fileID: 1451835920}
   - component: {fileID: 1451835922}
+  - component: {fileID: 1451835923}
   - component: {fileID: 1451835921}
   m_Layer: 3
   m_Name: Player02
@@ -27346,7 +27370,8 @@ MonoBehaviour:
   isPlayer2: 1
   playerScript: {fileID: 0}
   encounterEvent: {fileID: 0}
-  hasNecklease: 0
+  totalItems: 0
+  hasLocket: 0
   hasMagicAxe: 0
   hasBracelet: 0
   hasBrush: 0
@@ -27355,6 +27380,23 @@ MonoBehaviour:
   hasPouch: 0
   hasHorns: 0
   hasRing: 0
+--- !u!114 &1451835923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451835915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c30d5b9999539440880ffc7b65070e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  playerInventory: {fileID: 0}
+  VicotryScreen: {fileID: 0}
+  NotEnoughItems: {fileID: 0}
+  PrincessText: {fileID: 0}
 --- !u!1001 &1453225377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31233,6 +31275,10 @@ PrefabInstance:
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_Name
       value: 16_Scroll
+      objectReference: {fileID: 0}
+    - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
