@@ -66,8 +66,18 @@ public class PrincessEncounter : MonoBehaviour
         }
         else
         {
-            NotEnoughItems.SetActive(true);
-            //display to fuck off.
+            if (playerInventory.isPlayer2)
+            {
+                NotEnoughItems.SetActive(true);
+                PrincessText.text = "Fuck off, bring me my shit then talk to me Red head";
+
+            }
+            else
+            {
+                NotEnoughItems.SetActive(true);
+                PrincessText.text = "Fuck off, bring me my shit then talk to me smurf";
+
+            }
         }
     }
 

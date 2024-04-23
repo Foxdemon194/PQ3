@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PlayerScript : MonoBehaviour
 
     public GameObject pauseMenu;
     public bool gameIsPaused;
+    public Text movementText;
+
+    public TurnManager turnManager;
 
     private void Start()
     {
@@ -64,6 +68,12 @@ public class PlayerScript : MonoBehaviour
         rightArrow.SetActive(false);
         downArrow.SetActive(false);
         leftArrow.SetActive(false);
+        movementText.text = movementLeft.ToString();
+        if(movementLeft <= 0)
+        {
+            turnManager.ChangePlayerTurn();
+        }
+
     }
     public void PlayerMoveRight()
     {
@@ -74,6 +84,11 @@ public class PlayerScript : MonoBehaviour
         rightArrow.SetActive(false);
         downArrow.SetActive(false);
         leftArrow.SetActive(false);
+        movementText.text = movementLeft.ToString();
+        if (movementLeft <= 0)
+        {
+            turnManager.ChangePlayerTurn();
+        }
     }
     public void PlayerMoveDown()
     {
@@ -84,6 +99,11 @@ public class PlayerScript : MonoBehaviour
         rightArrow.SetActive(false);
         downArrow.SetActive(false);
         leftArrow.SetActive(false);
+        movementText.text = movementLeft.ToString();
+        if (movementLeft <= 0)
+        {
+            turnManager.ChangePlayerTurn();
+        }
     }
     public void PlayerMoveLeft()
     {
@@ -94,10 +114,25 @@ public class PlayerScript : MonoBehaviour
         rightArrow.SetActive(false);
         downArrow.SetActive(false);
         leftArrow.SetActive(false);
+        movementText.text = movementLeft.ToString();
+        if (movementLeft <= 0)
+        {
+            turnManager.ChangePlayerTurn();
+        }
     }
 
     public void RollDice()
     {
+        movementLeft = Random.Range(1, 7);
+        movementText.text = movementLeft.ToString();
+
+        upArrow.SetActive(true);
+        rightArrow.SetActive(true);
+        downArrow.SetActive(true);
+        leftArrow.SetActive(true);
+        rollDiceButton.SetActive(false);
+
+        /*
         Vector3 rollDirection = new Vector3(Random.Range(-rollForce, rollForce), Random.Range(-rollForce, rollForce), 3*Random.Range(-rollForce / 2, -rollForce));//Random.onUnitSphere;
         Rigidbody rb = dice.GetComponent<Rigidbody>();
         float torqueX = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * Random.Range(torqueForce/2, torqueForce);
@@ -107,6 +142,7 @@ public class PlayerScript : MonoBehaviour
         rb.AddTorque(new Vector3(torqueX, torqueY, torqueZ), ForceMode.Impulse);
         dice.GetComponent<Rigidbody>().AddForce((rollDirection * rollForce), ForceMode.Impulse);
         rollDiceButton.SetActive(false);
+        */
     }
 
     public void Restart()

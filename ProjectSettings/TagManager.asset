@@ -22,6 +22,7 @@ TagManager:
   - MagicAxe
   - Scroll
   - Princess
+  - EndlessCorridorEvent
   layers:
   - Default
   - TransparentFX
