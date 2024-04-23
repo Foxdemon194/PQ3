@@ -8,6 +8,7 @@ public class EncounterEvent : MonoBehaviour
     public bool isPlayer2;
     public PlayerScript playerScript;
     public PlayerHealth playerHealth;
+    public playerInventory playerInventory;
 
     //public ZombieEvent zE;
     //public GiantSpiderEvent gSE;
@@ -51,6 +52,7 @@ public class EncounterEvent : MonoBehaviour
     {
        playerScript = GetComponent<PlayerScript>();   
        playerHealth = GetComponent<PlayerHealth>();
+       playerInventory = GetComponent<playerInventory>();
     }
 
 
@@ -83,8 +85,12 @@ public class EncounterEvent : MonoBehaviour
         if (isPlayer2)
         {
             Debug.Log("Player 2 Landed on Minotaur");
-            
+
             //check for magic axe
+            if (playerInventory.hasMagicAxe)
+            {
+                minotaurScript.minotaurHp -= 5;
+            }
 
             EncounterBackground.SetActive(true);
             MinotaurSprite.SetActive(true);
@@ -98,6 +104,10 @@ public class EncounterEvent : MonoBehaviour
             Debug.Log("Player Landed on Minotaur");
 
             //check for magic axe
+            if (playerInventory.hasMagicAxe)
+            {
+                minotaurScript.minotaurHp -= 5;
+            }
 
             EncounterBackground.SetActive(true);
             MinotaurSprite.SetActive(true);

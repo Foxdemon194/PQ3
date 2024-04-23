@@ -6054,7 +6054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6241,7 +6241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ring
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6938,7 +6938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8617,7 +8617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Locket
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9674,6 +9674,7 @@ GameObject:
   - component: {fileID: 604885290}
   - component: {fileID: 604885292}
   - component: {fileID: 604885291}
+  - component: {fileID: 604885293}
   m_Layer: 3
   m_Name: Player01
   m_TagString: Player
@@ -9792,6 +9793,7 @@ MonoBehaviour:
   isPlayer2: 0
   playerScript: {fileID: 604885287}
   playerHealth: {fileID: 604885290}
+  playerInventory: {fileID: 0}
   zombieText: {fileID: 526323233}
   minotaurText: {fileID: 645114260}
   giantSpiderText: {fileID: 1549756094}
@@ -9813,6 +9815,30 @@ MonoBehaviour:
   giantSpiderContinueButtonPlayer2: {fileID: 1607728663}
   minotaurScript: {fileID: 935858638}
   CurrentMonsterEvent: {fileID: 0}
+--- !u!114 &604885293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604885286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8fcfb0ef9dc47449b80a141ebed520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer2: 0
+  playerScript: {fileID: 0}
+  encounterEvent: {fileID: 0}
+  hasNecklease: 0
+  hasMagicAxe: 0
+  hasBracelet: 0
+  hasBrush: 0
+  hasDiary: 0
+  hasMirror: 0
+  hasPouch: 0
+  hasHorns: 0
+  hasRing: 0
 --- !u!1001 &606309772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11632,7 +11658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Mirror
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14270,7 +14296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 190
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -14500,7 +14526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -14606,11 +14632,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -85
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16072,8 +16098,9 @@ GameObject:
   m_Component:
   - component: {fileID: 935858639}
   - component: {fileID: 935858638}
+  - component: {fileID: 935858640}
   m_Layer: 0
-  m_Name: MinotaurEncounter
+  m_Name: Encounter Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16114,6 +16141,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935858640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935858637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a00c7869b647134fa09b4790e5b52f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &938721163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17327,7 +17366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -22672,11 +22711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -85
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22722,7 +22761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: MagicAxe
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24735,7 +24774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Diary
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25245,6 +25284,7 @@ GameObject:
   - component: {fileID: 1451835917}
   - component: {fileID: 1451835916}
   - component: {fileID: 1451835920}
+  - component: {fileID: 1451835922}
   - component: {fileID: 1451835921}
   m_Layer: 3
   m_Name: Player02
@@ -25343,6 +25383,7 @@ MonoBehaviour:
   isPlayer2: 1
   playerScript: {fileID: 1451835918}
   playerHealth: {fileID: 1451835916}
+  playerInventory: {fileID: 0}
   zombieText: {fileID: 526323233}
   minotaurText: {fileID: 645114260}
   giantSpiderText: {fileID: 1549756094}
@@ -25385,6 +25426,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4, y: 0.4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1451835922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451835915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8fcfb0ef9dc47449b80a141ebed520, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer2: 1
+  playerScript: {fileID: 0}
+  encounterEvent: {fileID: 0}
+  hasNecklease: 0
+  hasMagicAxe: 0
+  hasBracelet: 0
+  hasBrush: 0
+  hasDiary: 0
+  hasMirror: 0
+  hasPouch: 0
+  hasHorns: 0
+  hasRing: 0
 --- !u!1001 &1453225377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28821,7 +28886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29928,11 +29993,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 85
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -85
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31867,7 +31932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 190
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -32592,7 +32657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: HairBrush
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34371,7 +34436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 155
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 199532941546264400, guid: a758061b3e9574b4a84ef5a483c30d30, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -34462,7 +34527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: MoneyPouch
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34995,7 +35060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 999291409505744866, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Bracelet
       objectReference: {fileID: 0}
     - target: {fileID: 2464626175542047478, guid: 768a36c9f82f9cb41861386c49fe91b8, type: 3}
       propertyPath: m_LocalPosition.x

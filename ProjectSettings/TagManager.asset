@@ -11,6 +11,16 @@ TagManager:
   - ZombieEvent
   - Bullet
   - FloorChecker
+  - Item
+  - Locket
+  - Ring
+  - Bracelet
+  - Diary
+  - MoneyPouch
+  - Mirror
+  - HairBrush
+  - MagicAxe
+  - Scroll
   layers:
   - Default
   - TransparentFX
