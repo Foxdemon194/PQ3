@@ -26,6 +26,7 @@ TagManager:
   - WallChecker
   - Wall
   - Ghost
+  - Spotted
   layers:
   - Default
   - TransparentFX

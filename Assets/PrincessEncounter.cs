@@ -20,8 +20,9 @@ public class PrincessEncounter : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Princess") && playerScript.movementLeft == 0)
+        if (other.CompareTag("Princess"))
         {
+            Debug.Log("Landed on princess");
             CheckForWinner();
         }
     }
@@ -69,14 +70,10 @@ public class PrincessEncounter : MonoBehaviour
             if (playerInventory.isPlayer2)
             {
                 NotEnoughItems.SetActive(true);
-                PrincessText.text = "Fuck off, bring me my shit then talk to me Red head";
-
             }
             else
             {
                 NotEnoughItems.SetActive(true);
-                PrincessText.text = "Fuck off, bring me my shit then talk to me smurf";
-
             }
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class EncounterEvent : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class EncounterEvent : MonoBehaviour
     public PlayerScript playerScript;
     public PlayerHealth playerHealth;
     public playerInventory playerInventory;
+    public MinotaurEncounter minotaurEncounter;
+
+    public playerInventory OtherPlayerInventory;
+
+
 
     //public ZombieEvent zE;
     //public GiantSpiderEvent gSE;
@@ -22,6 +28,9 @@ public class EncounterEvent : MonoBehaviour
     public GameObject MinotaurSprite;
     public GameObject SpiderSprite;
 
+    public GameObject SpottedUIPanel;
+    public GameObject spottedPlayer1;
+    public GameObject spottedPlayer2;
 
     public GameObject zombieRollDieButton;
     public GameObject zombieContinueButton;
@@ -61,6 +70,11 @@ public class EncounterEvent : MonoBehaviour
         if (other.CompareTag("MinotaurEvent") && playerScript.movementLeft == 0)
         {
             CurrentMonsterEvent = other.gameObject;
+            if(minotaurEncounter == null)
+            {
+                Debug.LogError("Minotaur component missing");
+            }
+
             MinotaurEvent();
         }
 
@@ -75,6 +89,11 @@ public class EncounterEvent : MonoBehaviour
             CurrentMonsterEvent = other.gameObject;
             
             ZombieEvent();        
+        }
+
+        if (other.CompareTag("Spotted") && playerScript.movementLeft == 0)
+        {
+            SpottedEvent();
         }
     }
 
@@ -320,7 +339,7 @@ public class EncounterEvent : MonoBehaviour
             minotaurContinueButtonPlayer2.SetActive(false);
 
 
-            //player inventory + horns
+            playerInventory.hasHorns = true;
             Destroy(CurrentMonsterEvent);
             CurrentMonsterEvent = null;
         }
@@ -354,11 +373,11 @@ public class EncounterEvent : MonoBehaviour
 
 
         EncounterBackground.SetActive(false);
-        ZombieSprite.SetActive(false);
-        zombieRollDieButton.SetActive(false);
-        zombieContinueButton.SetActive(false);
-        zombieRollDieButtonPlayer2.SetActive(false);
-        zombieContinueButtonPlayer2.SetActive(false);
+        SpiderSprite.SetActive(true);
+        giantSpiderRollDieButton.SetActive(true);
+        giantSpiderContinueButton.SetActive(false);
+        giantSpiderRollDieButtonPlayer2.SetActive(false);
+        giantSpiderContinueButtonPlayer2.SetActive(false);
 
         giantSpiderText.text = "A Giant Enemy Spider!";
 
@@ -369,5 +388,32 @@ public class EncounterEvent : MonoBehaviour
             CurrentMonsterEvent = null;
             enemyDied = false;
         }
+    }
+
+    public void SpottedEvent()
+    {
+        SpottedUIPanel.SetActive(true);
+        if (isPlayer2)
+        {
+            spottedPlayer2.SetActive(true);
+            spottedPlayer1.SetActive(false);
+        }
+        else
+        {
+            spottedPlayer1.SetActive(true);
+            spottedPlayer2.SetActive(false);
+        }
+        playerInventory.hasMagicAxe = true;
+        OtherPlayerInventory.hasMagicAxe = false;
+
+        playerInventory.collectedMagicAxe();
+    }
+
+    public void ActivateSpottedEvent()
+    {
+        SpottedUIPanel.SetActive(false);
+        spottedPlayer1.SetActive(false);
+        spottedPlayer2.SetActive(false);
+        transform.position = new Vector3(5.5f, 6.5f, 0);
     }
 }
