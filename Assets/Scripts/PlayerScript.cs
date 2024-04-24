@@ -21,10 +21,10 @@ public class PlayerScript : MonoBehaviour
     public GameObject leftArrow;
     public GameObject rollDiceButton;
 
-    public bool upTrue;
-    public bool leftTrue;
-    public bool downTrue;
-    public bool rightTrue;
+    public bool upTrue =true;
+    public bool leftTrue = true;
+    public bool downTrue = true;
+    public bool rightTrue = true;
 
     public GameObject pauseMenu;
     public bool gameIsPaused;
@@ -49,24 +49,12 @@ public class PlayerScript : MonoBehaviour
                 moving = false;
                 if(movementLeft > 0)
                 {
-                    if (upTrue)
-                    {
                         upArrow.SetActive(true);
-                    }
-                    if (rightTrue)
-                    {
                         rightArrow.SetActive(true);
-                    }
-                    if (downTrue)
-                    {
                         downArrow.SetActive(true);
-                    }
-                    if (leftTrue)
-                    {
                         leftArrow.SetActive(true);
-                    }
-                    }
                 }
+            }
         }
 
         

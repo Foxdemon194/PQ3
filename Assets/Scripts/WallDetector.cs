@@ -6,37 +6,14 @@ public class WallDetector : MonoBehaviour
 {
     public GameObject floorTrigger;
     public int directionNum;
-
+    public GameObject arrow;
+    
     private void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Wall"))
         {
             floorTrigger.tag = "Ghost";
             if (directionNum == 1) 
-            {
-                GetComponentInParent<PlayerScript>().upTrue = true;
-            }
-            if (directionNum == 2)
-            {
-                GetComponentInParent<PlayerScript>().rightTrue = true;
-            }
-            if (directionNum == 3)
-            {
-                GetComponentInParent<PlayerScript>().downTrue = true;
-            }
-            if (directionNum == 4)
-            {
-                GetComponentInParent<PlayerScript>().leftTrue = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Wall"))
-        {
-            floorTrigger.tag = "FloorChecker";
-            if (directionNum == 1)
             {
                 GetComponentInParent<PlayerScript>().upTrue = false;
             }
@@ -52,6 +29,32 @@ public class WallDetector : MonoBehaviour
             {
                 GetComponentInParent<PlayerScript>().leftTrue = false;
             }
+            arrow.SetActive(false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            floorTrigger.tag = "FloorChecker";
+            if (directionNum == 1)
+            {
+                GetComponentInParent<PlayerScript>().upTrue = true;
+            }
+            if (directionNum == 2)
+            {
+                GetComponentInParent<PlayerScript>().rightTrue = true;
+            }
+            if (directionNum == 3)
+            {
+                GetComponentInParent<PlayerScript>().downTrue = true;
+            }
+            if (directionNum == 4)
+            {
+                GetComponentInParent<PlayerScript>().leftTrue = true;
+            }
+            arrow.SetActive(true);
         }
     }
 }

@@ -132,6 +132,7 @@ public class TurnManager : MonoBehaviour
                 firstTurn = false;
 
             }
+            playerOneTurn = !playerOneTurn;
         }
 
 
