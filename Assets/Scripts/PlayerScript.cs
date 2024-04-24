@@ -21,6 +21,11 @@ public class PlayerScript : MonoBehaviour
     public GameObject leftArrow;
     public GameObject rollDiceButton;
 
+    public bool upTrue;
+    public bool leftTrue;
+    public bool downTrue;
+    public bool rightTrue;
+
     public GameObject pauseMenu;
     public bool gameIsPaused;
     public Text movementText;
@@ -30,6 +35,7 @@ public class PlayerScript : MonoBehaviour
     private void Start()
     {
         gameIsPaused = false;
+        movementLeft = 0;
     }
 
     public void Update()
@@ -43,12 +49,24 @@ public class PlayerScript : MonoBehaviour
                 moving = false;
                 if(movementLeft > 0)
                 {
-                    upArrow.SetActive(true);
-                    rightArrow.SetActive(true);
-                    downArrow.SetActive(true);
-                    leftArrow.SetActive(true);
+                    if (upTrue)
+                    {
+                        upArrow.SetActive(true);
+                    }
+                    if (rightTrue)
+                    {
+                        rightArrow.SetActive(true);
+                    }
+                    if (downTrue)
+                    {
+                        downArrow.SetActive(true);
+                    }
+                    if (leftTrue)
+                    {
+                        leftArrow.SetActive(true);
+                    }
+                    }
                 }
-            }
         }
 
         

@@ -123,12 +123,14 @@ public class TurnManager : MonoBehaviour
                 moveRoll1.SetActive(true);
                 moveRoll2.SetActive(false);
                 firstTurn = false;
+
             }
             else
             {
                 moveRoll1.SetActive(false);
                 moveRoll2.SetActive(true);
                 firstTurn = false;
+
             }
         }
 

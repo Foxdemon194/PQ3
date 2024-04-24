@@ -23,6 +23,9 @@ TagManager:
   - Scroll
   - Princess
   - EndlessCorridorEvent
+  - WallChecker
+  - Wall
+  - Ghost
   layers:
   - Default
   - TransparentFX

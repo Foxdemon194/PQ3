@@ -9,6 +9,8 @@ public class FloorMaterialScript : MonoBehaviour
 
     public Renderer ren;
 
+    public bool mayI = true;
+
     private void FixedUpdate()
     {
         ren.material = greyMat;
@@ -16,7 +18,7 @@ public class FloorMaterialScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("FloorChecker"))
+        if(other.CompareTag("FloorChecker") && mayI)
         {
             ren.material = whiteMat;
         }
