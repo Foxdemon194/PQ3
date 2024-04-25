@@ -32,6 +32,17 @@ public class EncounterEvent : MonoBehaviour
     public GameObject spottedPlayer1;
     public GameObject spottedPlayer2;
 
+    public GameObject GasTrapSprite;
+    public GameObject GasTrapUI;
+    public GameObject GasTrapButtonPlayer1;
+    public GameObject GasTrapButtonPlayer2;
+
+
+    public GameObject TrapDoorSprite;
+    public GameObject TrapDoorUI;
+    public GameObject TrapdoorButtonP1;
+    public GameObject TrapdoorButtonP2;
+
     public GameObject zombieRollDieButton;
     public GameObject zombieContinueButton;
 
@@ -94,6 +105,16 @@ public class EncounterEvent : MonoBehaviour
         if (other.CompareTag("Spotted") && playerScript.movementLeft == 0)
         {
             SpottedEvent();
+        }
+
+        if(other.CompareTag("Gas") && playerScript.movementLeft == 0)
+        {
+            GasTrapEvent();
+        }
+
+        if (other.CompareTag("Trapdoor") && playerScript.movementLeft == 0)
+        {
+            TrapDoorEvent();
         }
     }
 
@@ -187,6 +208,59 @@ public class EncounterEvent : MonoBehaviour
         }
         
              
+    }
+    public void SpottedEvent()
+    {
+        SpottedUIPanel.SetActive(true);
+        if (isPlayer2)
+        {
+            spottedPlayer2.SetActive(true);
+            spottedPlayer1.SetActive(false);
+        }
+        else
+        {
+            spottedPlayer1.SetActive(true);
+            spottedPlayer2.SetActive(false);
+        }
+        playerInventory.hasMagicAxe = true;
+        OtherPlayerInventory.hasMagicAxe = false;
+
+        playerInventory.collectedMagicAxe();
+    }
+
+    public void GasTrapEvent()
+    {
+        EncounterBackground.SetActive(true);
+        GasTrapSprite.SetActive(true);
+        GasTrapUI.SetActive(true);
+        if (!isPlayer2)
+        {
+            GasTrapButtonPlayer1.SetActive(true);
+            GasTrapButtonPlayer2.SetActive(false);
+        }
+        else
+        {
+            GasTrapButtonPlayer1.SetActive(false);
+            GasTrapButtonPlayer2.SetActive(true);
+        }
+    }
+
+    public void TrapDoorEvent()
+    {
+        EncounterBackground.SetActive(true);
+        TrapDoorUI.SetActive(true);
+        TrapDoorSprite.SetActive(true);
+
+        if (!isPlayer2)
+        {
+            TrapdoorButtonP1.SetActive(true);
+            TrapdoorButtonP2.SetActive(false);
+        }
+        else
+        {
+            TrapdoorButtonP1.SetActive(false);
+            TrapdoorButtonP2.SetActive(true);
+        }    
     }
     public void ZombieRollDie()
     {
@@ -373,8 +447,8 @@ public class EncounterEvent : MonoBehaviour
 
 
         EncounterBackground.SetActive(false);
-        SpiderSprite.SetActive(true);
-        giantSpiderRollDieButton.SetActive(true);
+        SpiderSprite.SetActive(false);
+        giantSpiderRollDieButton.SetActive(false);
         giantSpiderContinueButton.SetActive(false);
         giantSpiderRollDieButtonPlayer2.SetActive(false);
         giantSpiderContinueButtonPlayer2.SetActive(false);
@@ -389,31 +463,31 @@ public class EncounterEvent : MonoBehaviour
             enemyDied = false;
         }
     }
-
-    public void SpottedEvent()
-    {
-        SpottedUIPanel.SetActive(true);
-        if (isPlayer2)
-        {
-            spottedPlayer2.SetActive(true);
-            spottedPlayer1.SetActive(false);
-        }
-        else
-        {
-            spottedPlayer1.SetActive(true);
-            spottedPlayer2.SetActive(false);
-        }
-        playerInventory.hasMagicAxe = true;
-        OtherPlayerInventory.hasMagicAxe = false;
-
-        playerInventory.collectedMagicAxe();
-    }
-
     public void ActivateSpottedEvent()
     {
         SpottedUIPanel.SetActive(false);
         spottedPlayer1.SetActive(false);
         spottedPlayer2.SetActive(false);
         transform.position = new Vector3(5.5f, 6.5f, 0);
+    }
+
+    public void ActivateGasEffect()
+    {
+        playerHealth.isPoisoned = false;
+        EncounterBackground.SetActive(false);
+        GasTrapSprite.SetActive(false);
+        GasTrapUI.SetActive(false);
+        GasTrapButtonPlayer1.SetActive(false);
+        GasTrapButtonPlayer2.SetActive(false);
+    }
+
+    public void ActivateTrapDoorEffect()
+    {
+        EncounterBackground.SetActive(false);
+        transform.position = new Vector3(0.5f, 0.5f, 0);
+        TrapdoorButtonP1.SetActive(false);
+        TrapdoorButtonP2.SetActive(false);
+        TrapDoorUI.SetActive(false);
+        TrapDoorSprite.SetActive(false);
     }
 }

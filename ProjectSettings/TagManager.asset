@@ -27,6 +27,8 @@ TagManager:
   - Wall
   - Ghost
   - Spotted
+  - Gas
+  - Trapdoor
   layers:
   - Default
   - TransparentFX
