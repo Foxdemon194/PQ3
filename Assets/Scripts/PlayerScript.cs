@@ -39,6 +39,14 @@ public class PlayerScript : MonoBehaviour
         gameIsPaused = false;
         movementLeft = 0;
         targetPosition = transform.position;
+
+        if(isSingleplayer)
+        {
+            upArrow.SetActive(false);
+            rightArrow.SetActive(false);
+            downArrow.SetActive(false);
+            leftArrow.SetActive(false);
+        }
     }
 
     public void Update()
@@ -88,7 +96,14 @@ public class PlayerScript : MonoBehaviour
         movementText.text = movementLeft.ToString();
         if(movementLeft <= 0)
         {
-            turnManager.ChangePlayerTurn();
+            if (isSingleplayer)
+            {
+                rollDiceButton.SetActive(true);                
+            }
+            else
+            {
+                turnManager.ChangePlayerTurn();
+            }
         }
 
     }
@@ -104,7 +119,14 @@ public class PlayerScript : MonoBehaviour
         movementText.text = movementLeft.ToString();
         if (movementLeft <= 0)
         {
-            turnManager.ChangePlayerTurn();
+            if (isSingleplayer)
+            {
+                rollDiceButton.SetActive(true);
+            }
+            else
+            {
+                turnManager.ChangePlayerTurn();
+            }
         }
     }
     public void PlayerMoveDown()
@@ -119,7 +141,14 @@ public class PlayerScript : MonoBehaviour
         movementText.text = movementLeft.ToString();
         if (movementLeft <= 0)
         {
-            turnManager.ChangePlayerTurn();
+            if (isSingleplayer)
+            {
+                rollDiceButton.SetActive(true);
+            }
+            else
+            {
+                turnManager.ChangePlayerTurn();
+            }
         }
     }
     public void PlayerMoveLeft()
@@ -134,7 +163,14 @@ public class PlayerScript : MonoBehaviour
         movementText.text = movementLeft.ToString();
         if (movementLeft <= 0)
         {
-            turnManager.ChangePlayerTurn();
+            if (isSingleplayer)
+            {
+                rollDiceButton.SetActive(true);
+            }
+            else
+            {
+                turnManager.ChangePlayerTurn();
+            }
         }
     }
 
@@ -145,18 +181,6 @@ public class PlayerScript : MonoBehaviour
 
         CheckIfMovable();
         rollDiceButton.SetActive(false);
-
-        /*
-        Vector3 rollDirection = new Vector3(Random.Range(-rollForce, rollForce), Random.Range(-rollForce, rollForce), 3*Random.Range(-rollForce / 2, -rollForce));//Random.onUnitSphere;
-        Rigidbody rb = dice.GetComponent<Rigidbody>();
-        float torqueX = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * Random.Range(torqueForce/2, torqueForce);
-        float torqueY = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * Random.Range(torqueForce/2, torqueForce);
-        float torqueZ = (Random.Range(0f, 1f) < 0.5f ? -1 : 1) * Random.Range(torqueForce/2, torqueForce);
-
-        rb.AddTorque(new Vector3(torqueX, torqueY, torqueZ), ForceMode.Impulse);
-        dice.GetComponent<Rigidbody>().AddForce((rollDirection * rollForce), ForceMode.Impulse);
-        rollDiceButton.SetActive(false);
-        */
     }
 
     public void Restart()
@@ -164,6 +188,14 @@ public class PlayerScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if(collision.gameObject.CompareTag("Player") && movementLeft <= 0 && moving)
+    //    {
+    //        collision.gameObject.transform.position = new Vector3(0.5f, 0.5f, 0f);
+    //    }
+    //}
 
     public void Pause()
     {

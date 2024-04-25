@@ -24,6 +24,15 @@ public class PlayerHealth : MonoBehaviour
     {
         healthSlider.value = health;
 
+        if (isPoisoned && encounterEvent.isPlayer2)
+        {
+            Debug.Log("Player 2 poisoned");
+        }
+        else if(isPoisoned && encounterEvent.isPlayer2)
+        {
+            Debug.Log("Player 1 poisoned");
+        }
+
         if (health <= 0)
         {
             gameOver = true;

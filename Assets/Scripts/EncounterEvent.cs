@@ -298,7 +298,7 @@ public class EncounterEvent : MonoBehaviour
             zombieText.text = "You've snuck past the zombie";
             enemyDied = false;
 
-            playerHealth.isPoisoned = true;
+            playerHealth.isPoisoned = false;
         }
         else
         {
@@ -306,7 +306,7 @@ public class EncounterEvent : MonoBehaviour
             zombieText.text = "You've defeated the zombie";
             enemyDied = true;
 
-            playerHealth.isPoisoned = true;
+            playerHealth.isPoisoned = false;
         }
     }
 
@@ -334,7 +334,7 @@ public class EncounterEvent : MonoBehaviour
         }
         else if (dieRoll == 5)
         {
-            giantSpiderText.text = "The spider bit you. lose an token";
+            giantSpiderText.text = "The spider bit you. You ran and got poisoned";
             playerHealth.isPoisoned = true; //placeholder
             //do playerInventory and make function to lose item
 
