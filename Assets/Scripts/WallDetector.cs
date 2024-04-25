@@ -7,29 +7,30 @@ public class WallDetector : MonoBehaviour
     public GameObject floorTrigger;
     public int directionNum;
     public GameObject arrow;
-    
+    public PlayerScript playerScript;
+
     private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Wall"))
+        if (other.CompareTag("Wall"))
         {
-            floorTrigger.tag = "Ghost";
-            if (directionNum == 1) 
+            // Disable the corresponding arrow based on the directionNum
+            switch (directionNum)
             {
-                GetComponentInParent<PlayerScript>().upTrue = false;
+                case 1: // Up
+                    playerScript.upTrue = false;
+                    break;
+                case 2: // Right
+                    playerScript.rightTrue = false;
+                    break;
+                case 3: // Down
+                    playerScript.downTrue = false;
+                    break;
+                case 4: // Left
+                    playerScript.leftTrue = false;
+                    break;
+                default:
+                    break;
             }
-            if (directionNum == 2)
-            {
-                GetComponentInParent<PlayerScript>().rightTrue = false;
-            }
-            if (directionNum == 3)
-            {
-                GetComponentInParent<PlayerScript>().downTrue = false;
-            }
-            if (directionNum == 4)
-            {
-                GetComponentInParent<PlayerScript>().leftTrue = false;
-            }
-            arrow.SetActive(false);
         }
     }
 
@@ -37,24 +38,10 @@ public class WallDetector : MonoBehaviour
     {
         if (other.CompareTag("Wall"))
         {
-            floorTrigger.tag = "FloorChecker";
-            if (directionNum == 1)
-            {
-                GetComponentInParent<PlayerScript>().upTrue = true;
-            }
-            if (directionNum == 2)
-            {
-                GetComponentInParent<PlayerScript>().rightTrue = true;
-            }
-            if (directionNum == 3)
-            {
-                GetComponentInParent<PlayerScript>().downTrue = true;
-            }
-            if (directionNum == 4)
-            {
-                GetComponentInParent<PlayerScript>().leftTrue = true;
-            }
-            arrow.SetActive(true);
+            playerScript.upTrue = true;
+            playerScript.rightTrue = true;
+            playerScript.downTrue = true;
+            playerScript.leftTrue = true;
         }
     }
 }

@@ -2605,6 +2605,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1979287588}
   directionNum: 4
   arrow: {fileID: 1037933160}
+  playerScript: {fileID: 1451835918}
 --- !u!65 &142007638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11719,8 +11720,8 @@ MonoBehaviour:
   rollDiceButton: {fileID: 1227604672}
   upTrue: 0
   leftTrue: 0
-  downTrue: 0
-  rightTrue: 0
+  downTrue: 1
+  rightTrue: 1
   pauseMenu: {fileID: 332619886}
   gameIsPaused: 0
   movementText: {fileID: 1233446661}
@@ -13552,6 +13553,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1439792314}
   directionNum: 2
   arrow: {fileID: 368901032}
+  playerScript: {fileID: 604885287}
 --- !u!65 &680839112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19501,6 +19503,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 592745460}
   directionNum: 3
   arrow: {fileID: 1206961351}
+  playerScript: {fileID: 604885287}
 --- !u!65 &966364504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21513,6 +21516,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1439792314}
   directionNum: 2
   arrow: {fileID: 1052455413}
+  playerScript: {fileID: 1451835918}
 --- !u!65 &1039815690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24328,6 +24332,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1979287588}
   directionNum: 4
   arrow: {fileID: 1037933160}
+  playerScript: {fileID: 604885287}
 --- !u!65 &1163621760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24528,6 +24533,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1179140609}
   directionNum: 1
   arrow: {fileID: 588607174}
+  playerScript: {fileID: 604885287}
 --- !u!65 &1169546028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30687,8 +30693,8 @@ MonoBehaviour:
   rollDiceButton: {fileID: 49976729}
   upTrue: 0
   leftTrue: 0
-  downTrue: 0
-  rightTrue: 0
+  downTrue: 1
+  rightTrue: 1
   pauseMenu: {fileID: 332619886}
   gameIsPaused: 0
   movementText: {fileID: 2073736146}
@@ -31015,6 +31021,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 1179140609}
   directionNum: 1
   arrow: {fileID: 381006991}
+  playerScript: {fileID: 1451835918}
 --- !u!65 &1458818602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36580,6 +36587,7 @@ MonoBehaviour:
   floorTrigger: {fileID: 592745460}
   directionNum: 3
   arrow: {fileID: 1206961351}
+  playerScript: {fileID: 1451835918}
 --- !u!65 &1761425611
 BoxCollider:
   m_ObjectHideFlags: 0

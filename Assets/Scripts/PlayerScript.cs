@@ -36,6 +36,7 @@ public class PlayerScript : MonoBehaviour
     {
         gameIsPaused = false;
         movementLeft = 0;
+        targetPosition = transform.position;
     }
 
     public void Update()
@@ -49,20 +50,28 @@ public class PlayerScript : MonoBehaviour
                 moving = false;
                 if(movementLeft > 0)
                 {
-                        upArrow.SetActive(true);
-                        rightArrow.SetActive(true);
-                        downArrow.SetActive(true);
-                        leftArrow.SetActive(true);
+                    CheckIfMovable();
                 }
             }
         }
-
         
         if (Input.GetKeyDown(KeyCode.Escape)) //playtest button
         {
             Pause();
         }
         
+    }
+
+    public void CheckIfMovable()
+    {
+        if(upTrue)
+        upArrow.SetActive(true);
+        if(rightTrue)
+        rightArrow.SetActive(true);
+        if(downTrue)
+        downArrow.SetActive(true);
+        if(leftTrue)
+        leftArrow.SetActive(true);
     }
 
     public void PlayerMoveUp()
@@ -132,10 +141,7 @@ public class PlayerScript : MonoBehaviour
         movementLeft = Random.Range(1, 7);
         movementText.text = movementLeft.ToString();
 
-        upArrow.SetActive(true);
-        rightArrow.SetActive(true);
-        downArrow.SetActive(true);
-        leftArrow.SetActive(true);
+        CheckIfMovable();
         rollDiceButton.SetActive(false);
 
         /*
