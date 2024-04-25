@@ -12,7 +12,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void PlayOnePlayer()
     {
-        SceneManager.LoadScene("GameScene01");
+        SceneManager.LoadScene("SinglePlayer");
     }
 
     public void LookingForTwoPlayers()
@@ -21,7 +21,7 @@ public class SceneManagerScript : MonoBehaviour
     }
     public void PlayTwoPlayer()
     {
-        SceneManager.LoadScene("GameScene02");
+        SceneManager.LoadScene("GameScene01");
     }
 
     public void Reset()

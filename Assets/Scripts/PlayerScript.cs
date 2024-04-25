@@ -32,6 +32,8 @@ public class PlayerScript : MonoBehaviour
 
     public TurnManager turnManager;
 
+    public bool isSingleplayer = false;
+
     private void Start()
     {
         gameIsPaused = false;

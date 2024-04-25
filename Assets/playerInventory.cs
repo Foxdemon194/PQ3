@@ -60,49 +60,49 @@ public class playerInventory : MonoBehaviour
                 hasLocket = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                locketImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                locketImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("Ring") && playerScript.movementLeft == 0)
             {
                 hasRing = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                ringImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                ringImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("Bracelet") && playerScript.movementLeft == 0)
             {
                 hasBracelet = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                braceletImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                braceletImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("Diary") && playerScript.movementLeft == 0)
             {
                 hasDiary = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                diaryImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                diaryImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("MoneyPouch") && playerScript.movementLeft == 0)
             {
                 hasPouch = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                pouchImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                pouchImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("Mirror") && playerScript.movementLeft == 0)
             {
                 hasMirror = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                mirrorImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                mirrorImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("HairBrush") && playerScript.movementLeft == 0)
             {
                 hasBrush = true;
                 other.gameObject.SetActive(false);
                 totalItems++;
-                brushImage.color = encounterEvent.isPlayer2 ? Color.blue : Color.red;
+                brushImage.color = isPlayer2 ? Color.blue : Color.red;
             }
             if (other.CompareTag("MagicAxe") && playerScript.movementLeft == 0)
             {
@@ -118,7 +118,7 @@ public class playerInventory : MonoBehaviour
         hasMagicAxe = true;
         //totalItems++;
 
-        if (encounterEvent.isPlayer2)
+        if (isPlayer2)
         {
             magicAxeImage.color = Color.blue;
         }

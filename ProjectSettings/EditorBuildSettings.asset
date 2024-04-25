@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LFMScene.unity
     guid: ab2a1d03565499345a504e5c91d562a2
+  - enabled: 1
+    path: Assets/Scenes/SinglePlayer.unity
+    guid: 27382219b4dd3a744a2c8dbcfbe0cf1c
   m_configObjects: {}
